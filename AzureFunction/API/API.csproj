@@ -11,9 +11,9 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Extensions\Extensions.csproj" />
-    <ProjectReference Include="..\TenantStore.Data.Contract\TenantStore.Service.Contract.csproj" />
-    <ProjectReference Include="..\TenantStore.Service\TenantStore.Service.CosmosDB.csproj" />
+    <ProjectReference Include="..\..\Service\TenantStore.Data.Contract\TenantStore.Service.Contract.csproj" />
+    <ProjectReference Include="..\..\Service\TenantStore.Service\TenantStore.Service.CosmosDB.csproj" />
+    <ProjectReference Include="..\..\Utilities\Extensions\Extensions.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
