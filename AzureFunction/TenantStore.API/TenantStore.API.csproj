@@ -11,9 +11,9 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Constants\Constants.csproj" />
     <ProjectReference Include="..\..\Service\TenantStore.Service.Contract\TenantStore.Service.Contract.csproj" />
     <ProjectReference Include="..\..\Service\TenantStore.Service.CosmosDB\TenantStore.Service.CosmosDB.csproj" />
+    <ProjectReference Include="..\..\Utilities\Constants\Constants.csproj" />
     <ProjectReference Include="..\..\Utilities\Extensions\Extensions.csproj" />
   </ItemGroup>
   <ItemGroup>

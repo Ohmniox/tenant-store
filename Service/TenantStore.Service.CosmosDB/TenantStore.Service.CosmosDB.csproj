@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Constants\Constants.csproj" />
+    <ProjectReference Include="..\..\Utilities\Constants\Constants.csproj" />
     <ProjectReference Include="..\TenantStore.Service.Contract\TenantStore.Service.Contract.csproj" />
   </ItemGroup>
 
