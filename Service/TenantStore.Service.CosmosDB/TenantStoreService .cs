@@ -14,30 +14,29 @@ namespace TenantStore.Service.CosmosDB
     public class TenantStoreService : ITenantStoreService
     {
         private readonly CosmosClient cosmosClient;
+        private readonly Container container;
         private readonly ILogger<TenantStoreService> logger;
 
         public TenantStoreService(CosmosClient cosmosClient, ILogger<TenantStoreService> logger)
         {
             this.cosmosClient = cosmosClient;
+            this.container = GetContainer();
             this.logger = logger;
         }
 
-        public async Task CreateTenantAsync(Tenant tenant)
+        public Task CreateTenantAsync(Tenant tenant)
         {
-            var container = GetContainer();
-            ItemResponse<Tenant> tenantResponse = await container.CreateItemAsync<Tenant>(tenant, new PartitionKey(tenant.region));
+            return container.CreateItemAsync<Tenant>(tenant, new PartitionKey(tenant.region));
         }
 
-        public async Task UpdateTenantAsync(Tenant tenant)
+        public Task UpdateTenantAsync(Tenant tenant)
         {
-            var container = GetContainer();
-            await container.UpsertItemAsync<Tenant>(tenant);
+            return container.UpsertItemAsync<Tenant>(tenant);
         }
 
-        public async Task DeleteTenantAsync(Tenant tenant)
+        public Task DeleteTenantAsync(Tenant tenant)
         {
-            var container = GetContainer();
-            await container.DeleteItemAsync<Tenant>(tenant.id.ToString(), new PartitionKey(tenant.region));
+            return container.DeleteItemAsync<Tenant>(tenant.id.ToString(), new PartitionKey(tenant.region));
         }
 
         public async Task<Tenant> GetTenantAsync(Guid id)
@@ -70,7 +69,6 @@ namespace TenantStore.Service.CosmosDB
                     }
                 }
 
-                var container =  GetContainer();
                 FeedIterator<Tenant> queryResultSetIterator = container.GetItemQueryIterator<Tenant>(queryDefinition);
                 List<Tenant> tenants = new List<Tenant>();
 
