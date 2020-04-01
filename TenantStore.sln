@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantStore.Service.CosmosD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenantStore.API", "AzureFunction\TenantStore.API\TenantStore.API.csproj", "{96BCE863-4C75-432D-ABE1-A9727C8D692F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Constants", "Constants\Constants.csproj", "{CE238370-D1B9-4345-B67A-49568BA9033E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{96BCE863-4C75-432D-ABE1-A9727C8D692F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96BCE863-4C75-432D-ABE1-A9727C8D692F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96BCE863-4C75-432D-ABE1-A9727C8D692F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE238370-D1B9-4345-B67A-49568BA9033E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE238370-D1B9-4345-B67A-49568BA9033E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE238370-D1B9-4345-B67A-49568BA9033E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE238370-D1B9-4345-B67A-49568BA9033E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{1709CD09-4906-412F-8997-6A9D4DBA0503} = {362C39ED-5364-4532-AAEC-CB3773F4E596}
 		{412BFB3B-107A-4873-962A-5F1EC2FB79B8} = {362C39ED-5364-4532-AAEC-CB3773F4E596}
 		{96BCE863-4C75-432D-ABE1-A9727C8D692F} = {8088A4D7-CA62-40BD-997B-200C17C84977}
+		{CE238370-D1B9-4345-B67A-49568BA9033E} = {4094A50A-A0E9-4AB9-B6B3-0F9EA66D01A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {85D45ECA-B368-4679-B8E0-DC6285FE7B01}
