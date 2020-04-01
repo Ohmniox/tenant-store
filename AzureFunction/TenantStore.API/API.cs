@@ -14,7 +14,7 @@ using Extensions;
 using System.Linq;
 using TenantStore.Model.Mapper;
 
-namespace TenantStore.AzureFunction.API
+namespace TenantStore.API
 {
     public class API
     {

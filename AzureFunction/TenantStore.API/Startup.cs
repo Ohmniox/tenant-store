@@ -9,8 +9,8 @@ using System.Text;
 using TenantStore.Service.Contract;
 using TenantStore.Service.CosmosDB;
 
-[assembly: FunctionsStartup(typeof(TenantStoreAzureFunction.Startup))]
-namespace TenantStoreAzureFunction
+[assembly: FunctionsStartup(typeof(TenantStore.API.Startup))]
+namespace TenantStore.API
 {
 
     public class Startup : FunctionsStartup
