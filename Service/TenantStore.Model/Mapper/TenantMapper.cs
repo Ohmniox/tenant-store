@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using TenantStore.Model.RequestModel;
+using TenantStore.Model.Entity;
+
 
 namespace TenantStore.Model.Mapper
 {

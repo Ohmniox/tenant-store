@@ -5,8 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using TenantStore.Model;
-using TenantStore.Model.RequestModel;
+using TenantStore.Model.Entity;
 using TenantStore.Service.Contract;
 
 namespace TenantStore.Service.CosmosDB

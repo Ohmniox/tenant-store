@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using TenantStore.Service.Contract;
-using TenantStore.Model;
+using TenantStore.Model.Entity;
 using TenantStore.Model.RequestModel;
 using Extensions;
 using System.Linq;

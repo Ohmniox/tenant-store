@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using TenantStore.Model;
+using TenantStore.Model.Entity;
 using TenantStore.Model.RequestModel;
 
 namespace TenantStore.Service.Contract

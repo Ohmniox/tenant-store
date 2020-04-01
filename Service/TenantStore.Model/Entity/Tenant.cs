@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TenantStore.Model
+namespace TenantStore.Model.Entity
 {
     public class Tenant
     {
