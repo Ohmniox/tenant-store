@@ -42,10 +42,10 @@ namespace TenantStore.API
 
             builder.Services.AddScoped<ITenantStoreService, TenantStoreService>();
 
-            builder.Services.AddLogging((options) =>
-            {
-                options.AddConsole();
-            });
+            //builder.Services.AddLogging((options) =>
+            //{
+            //   // options.AddConsole();
+            //});
         }
     }
 }

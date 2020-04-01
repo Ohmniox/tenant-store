@@ -26,21 +26,25 @@ namespace TenantStore.Service.CosmosDB
 
         public Task CreateTenantAsync(Tenant tenant)
         {
+            logger.LogInformation($"Creating tenant with id: {tenant.id} and name :{tenant.name}");
             return container.CreateItemAsync<Tenant>(tenant, new PartitionKey(tenant.region));
         }
 
         public Task UpdateTenantAsync(Tenant tenant)
         {
+            logger.LogInformation($"Updating tenant with id: {tenant.id}");
             return container.UpsertItemAsync<Tenant>(tenant);
         }
 
         public Task DeleteTenantAsync(Tenant tenant)
         {
+            logger.LogInformation($"Deleting tenant with id: {tenant.id}");
             return container.DeleteItemAsync<Tenant>(tenant.id.ToString(), new PartitionKey(tenant.region));
         }
 
         public async Task<Tenant> GetTenantAsync(Guid id)
         {
+            logger.LogInformation($"Fetching tenant with id: {id}");
             var sqlQueryText = "SELECT c.id, c.name, c.region, c.metadata FROM c where c.id = @id";
             var parameters = new Dictionary<string, string>
             {
@@ -80,6 +84,7 @@ namespace TenantStore.Service.CosmosDB
                         tenants.Add(tenant);
                     }
                 }
+                logger.LogInformation($"Fetched tenants : {tenants.Count}");
                 return tenants;
             }
             catch (Exception ex)
@@ -91,8 +96,16 @@ namespace TenantStore.Service.CosmosDB
 
         private Container GetContainer()
         {
-            Database database = this.cosmosClient.GetDatabase(CosmosKeys.DatabaseId);
-            return database.GetContainer(CosmosKeys.ContainerId);
+            try
+            {
+                Database database = this.cosmosClient.GetDatabase(CosmosKeys.DatabaseId);
+                return database.GetContainer(CosmosKeys.ContainerId);
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Exception occured while fetching database/container");
+                throw;
+            }
         }
     }
 }
